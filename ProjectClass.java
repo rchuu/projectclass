@@ -1,20 +1,20 @@
 public class ProjectClass {
-    public String name;
-    public String description;
-    public int initialCost = 0;
-    public static String defaultName = "Default Name for Project";
-    public static String defaultDescription = "Default Description for Project";
+    private String name;
+    private String description;
+    private double initialCost = 0;
+    private static String defaultName = "Default NAME";
+    private static String defaultDesc = "DEfault DesC";
 
     public String getName() {
-        System.out.println("Project name is: " + name);
+        return name;
     }
 
     public String getDescription() {
-        System.out.println("Project description is: " + description);
+        return description;
     }
 
-    public String getInitialCost() {
-        System.out.println("Project initial cost is: " + initialCost);
+    public double getCost() {
+        return initialCost;
     }
 
     public void setName(String name) {
@@ -25,23 +25,23 @@ public class ProjectClass {
         this.description = description;
     }
 
-    public String elevatorPitch() {
-        return String.format("%s: %s: %d", name, description, initialCost);
+    public String ElevatorPitch() {
+        return String.format("%s : %s, %s", name, initialCost, description);
     }
 
-    public ProjectClass(String name, String description, int initialCost) {
+    public ProjectClass(String name, String description, double cost) {
         this.name = name;
+        this.initialCost = cost;
         this.description = description;
-        this.initialCost = initialCost;
     }
 
     public ProjectClass(String name) {
         this.name = name;
-        this.description = defaultDescription;
+        this.description = defaultDesc;
     }
 
     public ProjectClass() {
         name = defaultName;
-        description = defaultDescription;
+        description = defaultDesc;
     }
 }

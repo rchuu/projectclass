@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class PortfolioClass {
     public ArrayList<ProjectClass> Projects;
 
-    public Portfolio() {
+    public PortfolioClass() {
         this.Projects = new ArrayList<ProjectClass>();
     }
 
-    public void AddToPortfolio(Project p) {
+    public void AddToPortfolio(ProjectClass p) {
         Projects.add(p);
     }
 
@@ -16,11 +16,12 @@ public class PortfolioClass {
     }
 
     public void showPortfolio() {
-        double total = 0; // total cost of all projects in portfolio
-        for (Project p : Projects) {
-            total += p.getInitialCost();
-            System.out.println(p.elevatorPitch());
+        double total = 0;
+        for (ProjectClass p : Projects) {
+            total += p.getCost();
+            System.out.println(p.ElevatorPitch());
         }
-        System.out.println(String.format("Total cost of portfolio: %d", total));
+        System.out.println(String.format("Total Cost: %f", total));
+
     }
 }
